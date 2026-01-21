@@ -1,0 +1,375 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+/* domyślnie linki bez podkreślenia */
+a {
+    text-decoration: none;
+}
+
+/* górny pasek i nawigacja */
+/* wszystkie headery */
+header {
+    background: #ADD8E6;
+    color: black;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* header całej stronki  */
+.site-header {
+    background: #4c1d95;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+/* tytul aplikacji */
+.app-title a {
+    color: white;
+    text-decoration: none;
+}
+
+/* pasek nawigacji pod headerem */
+.main-nav {
+    background: #5b21b6;
+    color: white;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* linki w nav */
+.main-nav a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+/* username w rogu */
+.nav-username {
+    margin-right: 1rem;
+    font-weight: 600;
+}
+
+main {
+    padding: 1rem 2rem;
+}
+
+
+/* karta notatki w liscie */
+
+.note-card {
+    background: white;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.3rem 0.3rem rgba(15, 23, 42, 0.08);
+    margin-top: 2rem;
+}
+
+
+/* nagłówek karty: tytuł + priorytet */
+.note-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* tytuł notatki */
+.note-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* priorytet */
+.note-priority {
+    padding: 0.2rem 0.6rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* kolory priorytetów */
+.note-priority-1 {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.note-priority-2 {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+.note-priority-3 {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* wspólny układ pól formularzy globalny */
+
+/* kontener dla pojedynczego pola formularza */
+.form-row {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* label nad polem */
+form .form-row label {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-weight: 650;
+    color: #374151;
+}
+
+/* input/select/textarea w środku boxa */
+form .form-row input[type="text"],
+form .form-row input[type="date"],
+form .form-row input[type="datetime-local"],
+form .form-row input[type="number"],
+input[type="password"],
+input[type="email"],
+form .form-row select,
+form .form-row textarea {
+    width: 90%;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.8rem;
+    border: 0.1rem solid #d1d5db;
+    outline: none;
+    margin-top: 0.5rem;
+}
+
+/* focus dla inputów/select/textarea w form-row */
+form .form-row input:focus,
+form .form-row select:focus,
+form .form-row textarea:focus {
+    border-color: #5b21b6;
+    box-shadow: 0 0 0 0.3rem rgba(91, 33, 182, 0.15);
+}
+
+/* błędy globalnie */
+.error,
+.js-error {
+    color: #b91c1c;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* wyszukiwarka */
+
+.filter-bar {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* input filtrowania */
+.filter-bar input[type="text"] {
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #ccc;
+    min-width: 10rem;
+}
+
+
+/* widok szczegółów notatki */
+
+/* głowny div */
+.note-detail {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+/* box z treścią notatki */
+.note-content-box {
+    background: white;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.1rem 0.2rem rgba(15, 23, 42, 0.08);
+    margin-bottom: 1.5rem;
+    line-height: 2;
+}
+
+/* sczegóły */
+.note-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+}
+
+/* tytuł notatki */
+.note-detail-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* sekcja grid */
+.note-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem 1.5rem;
+    margin: 0 0 1.5rem;
+}
+
+/* nazwy pól */
+.note-grid dt {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #6b7280;
+}
+
+/* wartości */
+.note-grid dd {
+    margin: 0.1rem 0 0;
+}
+
+/* sekcja akcji */
+.note-actions {
+    margin-bottom: 2rem;
+}
+
+/* linki */
+.note-actions a {
+    text-decoration: none;
+    color: #4c1d95;
+}
+
+/* lista tasków */
+.note-tasks ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* task */
+.note-tasks li {
+    margin-bottom: 0.4rem;
+}
+
+/* przycisk toggle */
+.task-toggle {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 0.4rem;
+    font-size: 1rem;
+}
+
+/* task wykonany */
+.task-done {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+
+
+/* przyciski */
+.btn {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    background: #4c1d95;
+    color: white;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.reset{
+    margin-top: 1rem;
+}
+
+
+/* formularz notatki */
+.note-form-card {
+    max-width: 760px;
+    margin: 24px auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.10);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* tytuł formularza */
+.note-form-title {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    color: #111827;
+}
+
+/* etykiety */
+.txt {
+    font-weight: 650;
+    margin-bottom: 2rem;
+    color: #374151;
+}
+
+/* pola w formularzu */
+.note-form-card input[type="text"],
+.note-form-card input[type="date"],
+.note-form-card input[type="datetime-local"],
+.note-form-card input[type="number"],
+.note-form-card select,
+.note-form-card textarea {
+    width: 96%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    border: 0.2rem solid #d1d5db;
+    background: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* textarea */
+.note-form-card textarea {
+    min-height: 10rem;
+    resize: vertical;
+    line-height: 1;
+}
+
+
+/* box checkboxa */
+.checkbox-inline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 1rem;
+    width: 90%;
+    border: 0.1rem solid #d1d5db;
+    background: #fafafa;
+    margin-bottom: 1rem;
+}
+
+.checkbox-inline input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    margin: 0.9rem;
+}
+
+/* dodanie kategorii */
+.link-add-category {
+    color: #5b21b6;
+    font-weight: 650;
+}
+
+
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Usuń notatkę{% endblock %}
+
+{% block content %}
+<h1>Usuń notatkę</h1>
+
+<p>Czy na pewno chcesz usunąć notatkę: <strong>{{ note.title }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn">Tak, usuń</button>
+    <a href="{% url 'blog:note_detail' note.pk %}">Anuluj</a>
+</form>
+{% endblock %}

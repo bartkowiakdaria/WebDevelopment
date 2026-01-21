@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Moje notatki{% endblock %}
+
+{% block content %}
+<h1>Moje notatki</h1>
+
+<p><a href="{% url 'blog:note_create' %}" class="btn">
+    Dodaj nową notatkę
+</a>
+</p>
+
+<div class="filter-bar">
+    <label for="note-filter">Filtruj po tytule:</label>
+    <input type="text" id="note-filter" placeholder="Wpisz fragment tytułu...">
+</div>
+<div class="actions-bar">
+    <button type="button" class ='btn' id="refresh-notes">Odśwież z API</button>
+</div>
+
+<div id="note-list">
+    {% if notes %}
+        {% for note in notes %}
+            <div class="note-item">
+                <a href="{% url 'blog:note_detail' note.pk %}">
+                    {% include "blog/partials/_note_card.html" with note=note %}
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Brak notatek.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

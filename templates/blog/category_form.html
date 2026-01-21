@@ -1,0 +1,24 @@
+{% extends "base.html" %}  {# dziedziczymy po base.html #}
+
+{% block title %}Nowa kategoria{% endblock %}
+
+{% block content %}
+<h1>Dodaj kategorię</h1>
+
+<form method="post"> {# formularz wysyłany metodą POST #}
+    {% csrf_token %}  {# token CSRF wymagany dla formularzy post#}
+    {{ form.non_field_errors }} {# błedy formularza a nie konkretncyh pól#}
+
+    {% for field in form %} {# pętla po wszystkich polach formularza #}
+        <div class="form-row"> <!--- pojedynczy wierz formularza (label + input + błędy) --->
+            <label for="{{ field.id_for_label }}">Nazwa:</label> {# label przypięty do inputa po id #}
+            {{ field }} {# renderujemy input/select/textarea danego pola #}
+            {% for error in field.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    <button type="submit" class="btn">Zapisz</button>
+</form>
+{% endblock %}
