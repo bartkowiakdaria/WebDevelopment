@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // FILTROWANIE PO TYTULE
     if (filterInput && noteList) {
-        // Reagujemy na pisanie w polu input:
+        // reagujemy na pisanie w polu input:
         filterInput.addEventListener('input', () => {
             const query = filterInput.value.toLowerCase().trim();
             // przechodzimy po wszystkich notatkach i chowamy te, które nie pasują
             items.forEach(item => {
-                const titleElement = item.querySelector('h2'); // tytuly notatek sa w <h2>
+                const titleElement = item.querySelector('h2');
                 const titleText = titleElement ? titleElement.textContent.toLowerCase() : '';
 
                 // jeśli query puste -> pokazujemy wszystkie

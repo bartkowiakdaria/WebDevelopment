@@ -12,7 +12,7 @@ def home(request):
 @login_required
 def note_list(request):
     notes = Note.objects.filter(owner=request.user).order_by('-is_pinned', '-updated_at')
-    return render(request, 'blog/note_list.html', {'notes': notes}) # renderuj listę notatek
+    return render(request, 'blog/note_list.html', {'notes': notes}) # renderujemu listę notatek
 
 @login_required
 def note_create(request):

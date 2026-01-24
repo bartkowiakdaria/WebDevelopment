@@ -338,7 +338,7 @@ form .form-row textarea:focus {
     outline: none;
 }
 
-/* textarea */
+/* text */
 .note-form-card textarea {
     min-height: 10rem;
     resize: vertical;
