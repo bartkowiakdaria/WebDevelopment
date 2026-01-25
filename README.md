@@ -47,7 +47,7 @@ source .venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-
+W razie problemów z wersją Django wystarczy w requirements.txt podmienić wersję Django na starszą, np. 4.2.10 .
 ## 3) Migracja danych
 ```bash
 python manage.py migrate
