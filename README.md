@@ -1,6 +1,3 @@
-Readme · MD
-Copy
-
 # Notely — Django Notes App
  
 Notely is a Django web application for managing notes.
